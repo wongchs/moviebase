@@ -12,7 +12,7 @@ const MovieList = ({ movies }) => {
                 src={`http://img.omdbapi.com/?apikey=b096d6cb&i=${movie.imdbID}`}
                 alt={movie.Title}
               />
-              {movie.Title}
+              <h2>{movie.Title}</h2>
             </Link>
           </li>
         ))}

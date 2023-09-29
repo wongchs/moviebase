@@ -39,6 +39,8 @@ body {
 
 .search input {
   padding: 10px;
+  width: 80%;
+  border: none;
 }
 
 .search-btn {
