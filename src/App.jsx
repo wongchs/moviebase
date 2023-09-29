@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieList from "./components/MovieList";
+import SearchBar from "./components/SearchBar";
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -38,18 +39,13 @@ const App = () => {
     }
   }, [query]);
 
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
+  const handleSearch = (searchQuery) => {
+    setQuery(searchQuery);
   };
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search for movies..."
-        value={query}
-        onChange={handleInputChange}
-      />
+      <SearchBar onSearch={handleSearch} />
       {error && <p>{error}</p>}
       <MovieList movies={movieData} />
     </div>
