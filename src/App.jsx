@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
+import MovieDetail from "./components/MovieDetail";
 import "./App.css";
 
 const App = () => {
   const [query, setQuery] = useState("");
   const [movieData, setMovieData] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -45,7 +47,8 @@ const App = () => {
       <Header />
       <SearchBar onSearch={handleSearch} />
       {error && <p className="error">{error}</p>}
-      <MovieList movies={movieData} />
+      <MovieList movies={movieData} onMovieClick={setSelectedMovie} />
+      {selectedMovie && <MovieDetail imdbID={selectedMovie} />}
     </div>
   );
 };

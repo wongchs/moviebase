@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const MovieList = ({ movies }) => {
-  const [movieData, setMovieData] = useState([]);
-
-  useEffect(() => {
-    setMovieData(movies.slice(0, 10));
-  }, [movies]);
-
+const MovieList = ({ movies, onMovieClick }) => {
   return (
     <div className="movielist">
       <ul className="moviecard">
-        {movieData.map((movie) => (
-          <li key={movie.imdbID}>{movie.Title}</li>
+        {movies.map((movie) => (
+          <li key={movie.imdbID} onClick={() => onMovieClick(movie.imdbID)}>
+            {movie.Title}
+          </li>
         ))}
       </ul>
     </div>
