@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
 import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
+import "./App.css";
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -8,11 +10,11 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchMovies = async (searchQuery) => {
       try {
         const apiKey = "b096d6cb";
         const response = await fetch(
-          `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}&r=json`
+          `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchQuery}&r=json`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -31,12 +33,7 @@ const App = () => {
       }
     };
 
-    if (query.trim() !== "") {
-      fetchMovies();
-    } else {
-      setMovieData([]);
-      setError(null);
-    }
+    fetchMovies(query);
   }, [query]);
 
   const handleSearch = (searchQuery) => {
@@ -45,6 +42,7 @@ const App = () => {
 
   return (
     <div>
+      <Header />
       <SearchBar onSearch={handleSearch} />
       {error && <p>{error}</p>}
       <MovieList movies={movieData} />

@@ -8,8 +8,8 @@ const MovieList = ({ movies }) => {
   }, [movies]);
 
   return (
-    <div>
-      <ul>
+    <div className="movielist">
+      <ul className="moviecard">
         {movieData.map((movie) => (
           <li key={movie.imdbID}>{movie.Title}</li>
         ))}

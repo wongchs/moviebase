@@ -12,14 +12,14 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div className="search">
       <input
         type="text"
         placeholder="Search for movies..."
         value={query}
         onChange={handleInputChange}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="search-btn" onClick={handleSearch}>Search</button>
     </div>
   );
 };
