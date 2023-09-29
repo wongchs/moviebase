@@ -44,7 +44,7 @@ const App = () => {
     <div>
       <Header />
       <SearchBar onSearch={handleSearch} />
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <MovieList movies={movieData} />
     </div>
   );
