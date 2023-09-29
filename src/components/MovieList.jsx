@@ -7,7 +7,13 @@ const MovieList = ({ movies }) => {
       <ul className="moviecard">
         {movies.map((movie) => (
           <li key={movie.imdbID}>
-            <Link to={`/movie/${movie.imdbID}`}>{movie.Title}</Link>
+            <Link to={`/movie/${movie.imdbID}`}>
+              <img
+                src={`http://img.omdbapi.com/?apikey=b096d6cb&i=${movie.imdbID}`}
+                alt={movie.Title}
+              />
+              {movie.Title}
+            </Link>
           </li>
         ))}
       </ul>
