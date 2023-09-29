@@ -10,14 +10,19 @@ body {
 }
 
 .title {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
   padding: 12px;
   background-color: rgb(58, 58, 211);
   color: white;
   letter-spacing: 1.6px;
+}
+
+.title a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
@@ -73,10 +78,16 @@ body {
   border-radius: 10px;
   transition: transform 0.2s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 .moviecard li:hover {
   transform: scale(1.05);
+}
+
+.moviecard li a {
+  text-decoration: none;
+  color: black;
 }
 
 .error {

@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MovieList = ({ movies, onMovieClick }) => {
+const MovieList = ({ movies }) => {
   return (
     <div className="movielist">
       <ul className="moviecard">
         {movies.map((movie) => (
-          <li key={movie.imdbID} onClick={() => onMovieClick(movie.imdbID)}>
-            {movie.Title}
+          <li key={movie.imdbID}>
+            <Link to={`/movie/${movie.imdbID}`}>{movie.Title}</Link>
           </li>
         ))}
       </ul>

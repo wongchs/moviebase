@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
@@ -43,13 +44,17 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Header />
-      <SearchBar onSearch={handleSearch} />
-      {error && <p className="error">{error}</p>}
-      <MovieList movies={movieData} onMovieClick={setSelectedMovie} />
-      {selectedMovie && <MovieDetail imdbID={selectedMovie} />}
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <SearchBar onSearch={handleSearch} />
+        {error && <p className="error">{error}</p>}
+        <Routes>
+          <Route path="/" element={<MovieList movies={movieData} />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
