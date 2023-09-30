@@ -12,7 +12,9 @@ const MovieList = ({ movies }) => {
                 src={`http://img.omdbapi.com/?apikey=b096d6cb&i=${movie.imdbID}`}
                 alt={movie.Title}
               />
+              <div className="overlay"></div>
               <h2 className="movie-title">{movie.Title}</h2>
+              <div className="year">{movie.Year}</div>
             </Link>
           </li>
         ))}
