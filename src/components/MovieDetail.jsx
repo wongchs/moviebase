@@ -21,9 +21,25 @@ const MovieDetail = () => {
   return (
     <div>
       {movieDetail && (
-        <div>
-          <h2>{movieDetail.Title}</h2>
-          <p>{movieDetail.Plot}</p>
+        <div className="movie-detail">
+          <img
+            src={`http://img.omdbapi.com/?apikey=b096d6cb&i=${movieDetail.imdbID}`}
+            alt={movieDetail.Title}
+          />
+          <h2>
+            {movieDetail.Title} ({movieDetail.Year})
+          </h2>
+          <div className="details">
+            <p>
+              <strong>Genre:</strong> {movieDetail.Genre}
+            </p>
+            <p>
+              <strong>Director:</strong> {movieDetail.Director}
+            </p>
+            <p>
+              <strong>Plot:</strong> {movieDetail.Plot}
+            </p>
+          </div>
         </div>
       )}
     </div>
