@@ -7,9 +7,8 @@ import MovieDetail from "./components/MovieDetail";
 import "./App.css";
 
 const App = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("Batman");
   const [movieData, setMovieData] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
