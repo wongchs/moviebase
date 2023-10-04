@@ -49,7 +49,7 @@ body {
   padding: 1rem 1.3rem;
   cursor: pointer;
   border-radius: 100%;
-  border: none;
+  border: 1px solid rgba(29, 186, 36, 0.696);;
   background-color: rgba(29, 186, 36, 0.696);
   color: white;
   transition: 0.3s ease;
