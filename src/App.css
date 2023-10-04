@@ -38,14 +38,17 @@ body {
 }
 
 .search input {
-  padding: 10px;
+  padding: 1rem 1.3rem;
   width: 80%;
   border: none;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3rem;
 }
 
 .search-btn {
-  padding: 10px;
+  padding: 1rem 1.3rem;
   cursor: pointer;
+  border-radius: 100%;
   border: none;
   background-color: rgba(29, 186, 36, 0.696);
   color: white;
