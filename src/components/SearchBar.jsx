@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
@@ -10,6 +12,7 @@ const SearchBar = ({ onSearch }) => {
 
   const handleSearch = () => {
     onSearch(query);
+    navigate("/movies");
   };
 
   return (
@@ -20,7 +23,9 @@ const SearchBar = ({ onSearch }) => {
         value={query}
         onChange={handleInputChange}
       />
-      <button className="search-btn" onClick={handleSearch}><FaSearch /></button>
+      <button className="search-btn" onClick={handleSearch}>
+        <FaSearch />
+      </button>
     </div>
   );
 };

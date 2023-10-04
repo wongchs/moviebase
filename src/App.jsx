@@ -50,6 +50,7 @@ const App = () => {
         {error && <p className="error">{error}</p>}
         <Routes>
           <Route path="/" element={<MovieList movies={movieData} />} />
+          <Route path="/movies" element={<MovieList movies={movieData} />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
         </Routes>
       </div>
